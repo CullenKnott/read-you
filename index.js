@@ -102,6 +102,19 @@ const questions = [
     },
     {
         type:'input',
+        message:'How do you test this application?',
+        name:'test',
+        validate: test => {
+            if (test) {
+                return true;
+            } else {
+                console.log('please enter instructions on how to test the application');
+                return false;
+            }
+        }    
+    },
+    {
+        type:'input',
         message: 'What is your GitHub username?',
         name: 'username',
         validate: username => {
@@ -143,7 +156,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 const writeToFile = contentData => {
-    return new promise((resolve, reject) =>{
+    return new promise((resolve, reject) => {
         fs.writeFile('./utils/new-README.md', contentData, err => {
             if (err) {
                 reject(err);
