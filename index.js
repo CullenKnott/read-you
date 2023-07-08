@@ -75,7 +75,7 @@ const questions = [
     },
     {
         type:'input',
-        message: 'List all contributors and a link to their GitHub.',
+        message: 'How can someone contribute to this project?',
         name: 'contributors',
         validate: contributors => {
             if (contributors) {

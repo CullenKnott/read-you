@@ -10,6 +10,7 @@ Read-you is a command line interface app that allows users to create a professio
 - [Technology](#Technology)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Test](#test)
 - [Credits](#credits)
 - [License](#license)
 
@@ -31,7 +32,11 @@ In the terminal, run the command `node index.js` and the inquirer package will b
 
 Here is a video walkthrough on how to use the application
 
+https://www.youtube.com/watch?v=za8Tdo5rxrI
 
+## Test
+
+To test this app, open up the file in VS Code. Open the terminal, change directory into the root folder `read-you`, and run ‘node index.js’. Answer the prompts and view the preview of the `new-README.md` file in the `utils` folder and then under the `generateMarkdown.js` file.
 
 ## License
 
