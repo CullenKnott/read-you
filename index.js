@@ -1,11 +1,11 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer')
 const fs = require('fs')
-const generateMarkdown = require('./utils/generateMarkdown')
+const generateMarkdown = require('./utils/generateMarkdown');
+const { promises } = require('dns');
 
 // TODO: Create an array of questions for user input
 
-// Github username & email to be added to question section
 
 const questions = [
     {
@@ -87,10 +87,10 @@ const questions = [
         }
     },
     {
-        type:'checkbox',
+        type:'checkbox', // checkbox to allow user to choose from a selection of different licenses
         message: 'What license would you like to use for your application?',
         name: 'license',
-        choices: ['no license','GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense'],
+        choices: ['no license','agpl-3.0', 'gpl-3.0', 'lgpl-3.0', 'mpl-2.0', 'apache-2.0', 'mit', 'bsl-1.0', 'unlicense'],
         validate: license => {
             if (license) {
                 return true;
@@ -156,7 +156,7 @@ const questions = [
 
 // TODO: Create a function to write README file
 const writeToFile = contentData => {
-    return new promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         fs.writeFile('./utils/new-README.md', contentData, err => {
             if (err) {
                 reject(err);
